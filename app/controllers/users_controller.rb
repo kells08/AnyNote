@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :authorized, only: [:create]
+  before_action :current_user, only: [:edit, :update, :destroy]
 
   def profile
     render json: { user: User.new(current_user) }, status: :accepted
@@ -24,13 +25,22 @@ class UsersController < ApplicationController
   end
 
   def update
+    user.update(user_params)
+    redirect_to user_path(user)
   end
 
-  def delete
+  def destroy
+    user.destroy
   end
 
   private
+
   def user_params
     params.require(:user).permit(:name, :password, :username)
   end
+
+  def current_user
+    user = User.find(params[:id])
+  end
+
 end

@@ -5,3 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+allUsers = {
+  {
+    "users": [
+    {
+      "name": "Kelly",
+      "username": "kells",
+      "password": "hello"
+    }]
+  }
+}
+
+allNotes = {
+  {
+    "notes": [
+      {
+      "title": 'Christmas Shopping',
+      "due_date": '12/23/2018',
+      "color": 'green',
+      "text": "Mom wants the black and gold Michael Kors shoes from TJ Maxx"
+    }
+  }
+}

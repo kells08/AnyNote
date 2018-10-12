@@ -4,6 +4,7 @@ class CreateNotes < ActiveRecord::Migration[5.2]
       t.string :title
       t.date :due_date
       t.string :color
+      t.string :text
 
       t.timestamps
     end
