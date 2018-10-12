@@ -14,7 +14,6 @@ class NotesController < ApplicationController
 
   def create
     note = Note.create(note_params)
-    redirect_to notes_path
   end
 
   def edit
@@ -22,7 +21,6 @@ class NotesController < ApplicationController
 
   def update
     note.update(note_params)
-    redirect_to note_path(note)
   end
 
   def destroy
