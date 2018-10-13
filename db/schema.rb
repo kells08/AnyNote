@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 2018_10_11_185808) do
     t.date "due_date"
     t.string "color"
     t.string "text"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
