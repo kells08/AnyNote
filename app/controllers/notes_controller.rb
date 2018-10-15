@@ -42,5 +42,4 @@ class NotesController < ApplicationController
     note = Note.find(params[:id])
   end
 
-
 end
