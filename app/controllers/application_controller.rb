@@ -23,8 +23,8 @@ class ApplicationController < ActionController::API
   def current_user
     if decoded_token
       user_id = decoded_token[0]['user_id']
-      User.find_by(user_id)
-    end #removed user = User.find_by(id: user_id) from above
+      user = User.find_by(id: user_id)
+    end 
   end
 
   def logged_in?

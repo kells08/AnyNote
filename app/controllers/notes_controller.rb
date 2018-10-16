@@ -2,7 +2,7 @@ class NotesController < ApplicationController
   before_action :current_note, only: [:show, :edit, :update, :destroy]
   skip_before_action :authorized #delete later?
 
-# /notes GET
+  # /notes GET
   def index
     user = current_user
     notes = user.notes
@@ -14,20 +14,20 @@ class NotesController < ApplicationController
     render json: current_note
   end
 
-#dont need new or edit because forms come from React. We only use create or update because they send the data.
+  #dont need new or edit because forms come from React. We only use create or update because they send the data.
 
   # /notes/create POST
   def create
     note = Note.create(note_params)
   end
 
-    # /notes/:id/update PATCH
+  # /notes/:id/update PATCH
   def update
     note = current_note
     note.update(note_params)
   end
 
-    # /notes/:id DELETE
+  # /notes/:id DELETE
   def destroy
     note = current_note
     note.destroy
