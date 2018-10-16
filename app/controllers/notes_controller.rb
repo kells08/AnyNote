@@ -1,5 +1,6 @@
 class NotesController < ApplicationController
   before_action :current_note, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authorized #delete later?
 
 # /notes GET
   def index
