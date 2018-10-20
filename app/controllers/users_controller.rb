@@ -35,8 +35,9 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :password, :username)
+    params.require(:user).permit(:name, :password, :username, :note, :notes)
   end
+end
 
   # def current_user
   #   if decoded_token
